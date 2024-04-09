@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap");
+
+:root {
+  --rosa: linear-gradient(148deg, #fcd7eb 0% 25%, white, #fcd7eb 75% 100%);
+  --background: #414252;
+  --light-grey: linear-gradient(45deg, #c0bdbd 0% 25%, white, #c0bdbd 75% 100%);
+  --yellow: linear-gradient(90deg, #ffe39c 0% 25%, white, #ffe39c 75% 100%);
+  --rosa-yellow: linear-gradient(#fcd7eb 0% 25%, white, #ffe39c 75% 100%);
+  --rosa-grey: linear-gradient(135deg, #fcd7eb 0% 25%, white, #c0bdbd 75% 100%);
+  --yellow-grey: linear-gradient(
+    180deg,
+    #ffe39c 0% 25%,
+    white,
+    #c0bdbd 75% 100%
+  );
+  --white: #ffffff;
+  --softrosa: #ffe5f3;
+  --softgrey: #d9d9d9;
+  --morerosa: #f0aed1;
+}
+
+body {
+  font-family: "Baloo Tamma 2", system-ui;
+  display: flex;
+  justify-content: center;
+}
+
+/*GRID*/
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 18vw);
+  grid-template-rows: repeat(13, 18vw);
+  gap: 0.5vw;
+}
+
+.dateundInfo {
+  grid-column: 5;
+  grid-row: 1;
+  margin-top: -3rem;
+}
+
+.titel {
+  grid-column: 1/6;
+  grid-row: 1;
+  margin-top: -8rem;
+  z-index: 100;
+}
+
+.dot-collection {
+  display: flex;
+  gap: 1vw;
+  grid-column: 1/6;
+  grid-row: 7;
+  margin-left: -13vw;
+}
+
+.fall-with-us {
+  grid-column: 1/6;
+  grid-row: 4;
+}
+
+.dj-infos {
+  grid-column: 4/6;
+  grid-row: 11;
+  z-index: 20;
+}
+
+audio {
+  display: none;
+}
+
+.FalingMen3 {
+  width: 40vw;
+  position: fixed;
+  top: 20vh;
+  left: 30vw;
+  z-index: 80;
+}
+
+.FalingMen3 img {
+  width: 100%;
+}
+
+/*TEXT*/
+
+section.dateundInfo {
+  color: var(--white);
+  font-weight: 800;
+  font-optical-sizing: auto;
+  font-size: 4vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 1rem;
+  white-space: nowrap;
+  position: relative;
+  cursor: pointer;
+}
+
+.jahr {
+  font-size: 8vw;
+  text-align: right;
+}
+
+.day {
+  font-size: 4vw;
+  text-align: right;
+}
+
+.titel {
+  font-size: 6vw;
+  text-align: center;
+  flex-direction: row;
+  color: var(--white);
+  font-family: "Encode Sans Expanded", sans-serif;
+  font-weight: 800;
+  font-style: Extrabold;
+  letter-spacing: 2mm;
+}
+
+section.fall-with-us {
+  color: var(--white);
+  font-family: "Baloo Tamma 2", system-ui;
+  font-weight: 800;
+  font-optical-sizing: auto;
+  font-size: 4vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+  white-space: nowrap;
+}
+
+/*CIRCLE FLEXBOX*/
+
+section.parentcontainer {
+  background-color: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  gap: 5vw;
+}
+
+/*CIRCLES*/
+
+.dot {
+  border-radius: 100%;
+  height: 17vw;
+  width: 17vw;
+  background-color: var(--white);
+  animation-name: dot;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+/* Dots für Mobile ausblenden */
+.dots-mobile {
+  display: none;
+}
+
+/*ANIMATION ROTIERUNG 360DEG*/
+
+@keyframes dot {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*FARBEN ZU CIRCLE*/
+
+.rosa {
+  background-image: var(--rosa);
+  animation-direction: alternate-reverse;
+}
+
+.lightgrey {
+  background-image: var(--light-grey);
+}
+
+.yellow {
+  background-image: var(--yellow);
+  animation-direction: alternate-reverse;
+}
+
+.rosa-yellow {
+  background-image: var(--rosa-yellow);
+}
+
+.rosa-grey {
+  background-image: var(--rosa-grey);
+  animation-direction: alternate-reverse;
+}
+
+.yellow-grey {
+  background-image: var(--yellow-grey);
+}
+
+/*WEISSES QUADRAT HINTER DJ INFOS UND TEXT*/
+
+.dj-infos-text {
+  color: black;
+  font-size: 4vw;
+  font-optical-sizing: auto;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  margin-right: 1rem;
+  white-space: nowrap;
+  text-align: right;
+  white-space: nowrap;
+  font-weight: 800;
+  background-color: white;
+  padding: 0 20px;
+}
+
+/*Display*/
+html {
+  background-color: var(--background);
+}
+
+/*RESPONSIVE*/
+
+/*I Pad*/
+@media all and (max-width: 48em) {
+  html {
+    background-color: var(--background);
+  }
+  .parentcontainer.dots-desktop {
+    display: none;
+  }
+  .dot-collection {
+    margin-left: 0;
+  }
+
+  .titel {
+    grid-row: 3;
+    margin-top: -12rem;
+    z-index: 100;
+  }
+
+  .dateundInfo {
+    grid-row: 1;
+    margin-top: 1rem;
+  }
+
+  .fall-with-us {
+    grid-column: 1/6;
+    grid-row: 5;
+    margin-top: -3rem;
+  }
+
+  .dot-collection {
+    grid-row: 6;
+    margin-top: -3rem;
+  }
+
+  .dot {
+    height: 28vw;
+    width: 28vw;
+  }
+
+  .FalingMen3 {
+    width: 60vw;
+    top: 20vh;
+    left: 20vw;
+  }
+}
+
+/*I Phone*/
+@media all and (max-width: 40em) {
+  html {
+    background-color: var(--background);
+  }
+  .dots-mobile {
+    display: block;
+  }
+
+  .dateundInfo {
+    grid-row: 1;
+    margin-top: 1rem;
+  }
+
+  .dot-collection {
+    grid-row: 6;
+  }
+
+  .FalingMen3 {
+    width: 90vw;
+    position: fixed;
+    top: 21vh;
+    left: 1vw;
+    z-index: 80;
+  }
+
+  .dot {
+    height: 28vw;
+    width: 28vw;
+  }
+
+  .titel {
+    font-size: 7vw;
+    z-index: 100;
+  }
+}
